@@ -289,9 +289,9 @@ def main():
             processraw(caption, instream, outstream, 'C++')
         elif language == "sh":
             processraw(caption, instream, outstream, 'bash')
-        elif language == "py":
-            processwithcomments(caption, instream, outstream, 'Python')
-        elif language == "rawpy":
+        # elif language == "py":
+        #     processwithcomments(caption, instream, outstream, 'Python')
+        elif language == "rawpy" or language == "py":
             processraw(caption, instream, outstream, 'Python')
         else:
             raise ValueError("Unknown language: " + str(language))
