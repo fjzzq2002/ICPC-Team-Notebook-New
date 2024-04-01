@@ -193,9 +193,18 @@ def processraw(caption, instream, outstream, listingslang = 'raw'):
         print("\kactlerror{Could not read source.}", file=outstream)
 
 def parse_include(line):
+    line_raw = line
     line = line.strip()
     if line.startswith("#include"):
         return line[8:].strip()
+    # sometimes we are just too lazy to clean up the includes, typedefs etc.
+    if line_raw.startswith("using namespace ") and line.strip().endswith(';'):
+        return line[len('using namespace '):].strip()[:-1]+'::'
+    if line_raw.startswith("typedef ") and line.strip().endswith(';'):
+        tokens = line.strip()[:-1].split()
+        return tokens[-1]+' = '+' '.join(tokens[1:-1])
+    if line_raw.startswith("using ") and line.strip().endswith(';') and '=' in line:
+        return line.strip()[:-1][len('using '):]
     return None
 
 def getlang(input):
