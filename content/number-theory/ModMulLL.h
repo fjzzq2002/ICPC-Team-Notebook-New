@@ -3,7 +3,7 @@
  * Date: 2019-04-24
  * License: CC0
  * Source: https://github.com/RamchandraApte/OmniTemplate/blob/master/src/number_theory/modulo.hpp
- * Description: Calculate $a\cdot b\bmod c$ (or $a^b \bmod c$) for $0 \le a, b \le c \le 7.2\cdot 10^{18}$.
+ * Description: Calculate $a\cdot b\bmod c$ (or $a^b \bmod c$) for $0 \le a, b \le c \le 7.2\cdot 10^{18}$. Requires x87 80-bit floats (e.g. GCC). Only valid for $< 2^{52} \approx 4.5\cdot 10^{15}$ if long double is 64-bit.
  * Time: O(1) for \texttt{modmul}, O(\log b) for \texttt{modpow}
  * Status: stress-tested, proven correct
  * Details:
