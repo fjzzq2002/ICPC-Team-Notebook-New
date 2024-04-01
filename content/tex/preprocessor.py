@@ -76,6 +76,11 @@ def processwithcomments(caption, instream, outstream, listingslang):
     # Read lines from source file
     try:
         lines = instream.readlines()
+        # remove empty lines at beginning & end
+        while lines and not lines[-1].strip():
+            lines.pop()
+        while lines and not lines[0].strip():
+            lines.pop(0)
     except:
         error = "Could not read source."
         lines = []
