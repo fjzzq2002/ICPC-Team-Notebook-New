@@ -1,6 +1,6 @@
 /**
  * Author: Claris?
- * Description: Farrey Sequence. Calculate fraction between a/b and c/d with minimum denominator.
+ * Description: Use the Farrey sequence to find fraction between a/b and c/d with minimum denominator.
  */
 #include<cstdio>
 #include<algorithm>
