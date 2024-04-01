@@ -1,11 +1,11 @@
 /**
- * Author: Ziqian Zhong
+ * Author: Claris?
  * Description: SIMD examples.
  */
 #include "immintrin.h"
 #include "emmintrin.h"
 #pragma comment(linker, "/stack:200000000")
-#pragma GCC optimize("Ofast,no−stack−protector,−funroll−loops,fast-math")
+#pragma GCC optimize("Ofast,no-stack-protector,-funroll-loops,fast-math")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,avx,avx2,fma,sse4.1,sse4.2,sse4a,xsave,popcnt,abm,mmx,avx,tune=native")
 #define __AVX__ 1
 #define __AVX2__ 1
