@@ -12,7 +12,7 @@ The extremum is given by $x = -b/2a$.
 \Rightarrow
 \begin{aligned}x=\dfrac{ed-bf}{ad-bc}\\y=\dfrac{af-ec}{ad-bc}\end{aligned}\]
 
-In general, given an equation $Ax = b$, the solution to a variable $x_i$ is given by
+Generally for $Ax = b$,
 \[x_i = \frac{\det A_i'}{\det A} \]
 where $A_i'$ is $A$ with the $i$'th column replaced by $b$.
 
@@ -22,10 +22,10 @@ If $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$, and $r_1, \dots, r_k$ are distinct
 Non-distinct roots $r$ become polynomial factors, e.g. $a_n = (d_1n + d_2)r^n$.
 
 \section{Trigonometry}
-\begin{align*}
-\sin(v+w)&{}=\sin v\cos w+\cos v\sin w\\
-\cos(v+w)&{}=\cos v\cos w-\sin v\sin w\\
-\end{align*}
+% \begin{align*}
+% \sin(v+w)&{}=\sin v\cos w+\cos v\sin w\\
+% \cos(v+w)&{}=\cos v\cos w-\sin v\sin w\\
+% \end{align*}
 \begin{align*}
 \tan(v+w)&{}=\dfrac{\tan v+\tan w}{1-\tan v\tan w}\\
 \sin v+\sin w&{}=2\sin\dfrac{v+w}{2}\cos\dfrac{v-w}{2}\\
@@ -53,15 +53,6 @@ Law of sines: $\dfrac{\sin\alpha}{a}=\dfrac{\sin\beta}{b}=\dfrac{\sin\gamma}{c}=
 Law of cosines: $a^2=b^2+c^2-2bc\cos\alpha$\\
 Law of tangents: $\dfrac{a+b}{a-b}=\dfrac{\tan\dfrac{\alpha+\beta}{2}}{\tan\dfrac{\alpha-\beta}{2}}$\\
 
-\subsection{Quadrilaterals}
-With side lengths $a,b,c,d$, diagonals $e, f$, diagonals angle $\theta$, area $A$ and
-magic flux $F=b^2+d^2-a^2-c^2$:
-
-\[ 4A = 2ef \cdot \sin\theta = F\tan\theta = \sqrt{4e^2f^2-F^2} \]
-
- For cyclic quadrilaterals the sum of opposite angles is $180^\circ$,
-$ef = ac + bd$, and $A = \sqrt{(p-a)(p-b)(p-c)(p-d)}$.
-
 \subsection{Spherical coordinates}
 \begin{center}
 \includegraphics[width=25mm]{content/math/sphericalCoordinates}
@@ -71,6 +62,15 @@ x = r\sin\theta\cos\phi & r = \sqrt{x^2+y^2+z^2}\\
 y = r\sin\theta\sin\phi & \theta = \textrm{acos}(z/\sqrt{x^2+y^2+z^2})\\
 z = r\cos\theta & \phi = \textrm{atan2}(y,x)
 \end{array}\]
+
+\subsection{Quadrilaterals}
+With side lengths $a,b,c,d$, diagonals $e, f$, diagonals angle $\theta$, area $A$ and
+magic flux $F=b^2+d^2-a^2-c^2$:
+
+\[ 4A = 2ef \cdot \sin\theta = F\tan\theta = \sqrt{4e^2f^2-F^2} \]
+
+ For cyclic quadrilaterals the sum of opposite angles is $180^\circ$,
+$ef = ac + bd$, and $A = \sqrt{(p-a)(p-b)(p-c)(p-d)}$.
 
 \section{Derivatives/Integrals}
 \begin{align*}
