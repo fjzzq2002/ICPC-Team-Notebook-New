@@ -4,15 +4,7 @@
  */
 typedef long long ll;
 using namespace std;
-const int MOD=1e9+7;
-ll qp(ll a,ll b) {
-	ll x=1; a%=MOD;
-	while(b) {
-		if(b&1) x=x*a%MOD;
-		a=a*a%MOD; b>>=1;
-	}
-	return x;
-}
+const int MOD=1e9+7; ll qp(ll a,ll b) {a%=MOD;/*...*/}
 namespace linear_seq {
 inline vector<int> BM(vector<int> x) {
 	vector<int> ls,cur;

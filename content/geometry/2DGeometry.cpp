@@ -1,5 +1,5 @@
 /**
- * Author: ??
+ * Author: wxh?
  * Description: Basics of 2D geometry
  */
 
@@ -10,33 +10,23 @@ const ld PI = acos(-1);
 const ld EPS = 1e-12;
 int sgn(ld x) {
 	if (x > EPS) return 1;
-	else if (x < -EPS) return -1;
+	if (x < -EPS) return -1;
 	return 0;
 }
 struct point {
 	ld x, y;
 	point(ld x = 0, ld y = 0) : x(x), y(y) {}
-	point operator+(const point& o) const {
-		return point(x + o.x, y + o.y);
-	}
-	point operator-(const point& o) const {
-		return point(x - o.x, y - o.y);
-	}
-	point operator*(const ld& o) const {
-		return point(x * o, y * o);
-	}
-	point operator/(const ld& o) const {
-		return point(x / o, y / o);
-	}
+	point operator+(const point& o) const {/*...*/}
+	point operator-(const point& o) const {/*...*/}
+	point operator*(const ld& o) const {/*...*/}
+	point operator/(const ld& o) const {/*...*/}
 	ld operator*(const point& o) const {
 		return x * o.y - y * o.x;
 	}
 	ld operator^(const point& o) const {
 		return x * o.x + y * o.y;
 	}
-	point rotate() const {
-		return point(-y, x);
-	}
+	point rotate() const { return point(-y, x); }
 	point unit() const {
 		ld w = abs();
 		return point(x / w, y / w);
@@ -44,14 +34,11 @@ struct point {
 	int get() const {
 		return sgn(y) == 1 || (sgn(y) == 0 && sgn(x) == -1);
 	}
-	ld abs() const {
-		return sqrt(x * x + y * y);
-	}
+	ld abs() const { return sqrt(x * x + y * y); }
 };
 struct line {
 	point p0, p1;
-	line(point p0, point p1) : p0(p0), p1(p1) {
-	}
+	line(point p0, point p1) : p0(p0), p1(p1) {}
 	bool contain(point p) const {
 		return sgn((p1 - p0) * (p - p0)) == 1;
 	}
@@ -63,8 +50,7 @@ struct line {
 struct pointID {
 	point p;
 	int id;
-	pointID(point p, int id) : p(p), id(id) {
-	}
+	pointID(point p, int id) : p(p), id(id) {}
 	bool operator<(const pointID& o) const {
 		return make_pair(p.x, p.y) < make_pair(o.p.x, o.p.y);
 	}
@@ -111,8 +97,7 @@ vector<line> halfplane_intersection(vector<line> l) {
 		q.pop_back();
 	while ((int) q.size() > 2 && !check(q[1], q[0], q[q.size() - 1]))
 		q.pop_front();
-	if ((int) q.size() == 2)
-		return vector<line>();
+	if ((int) q.size() == 2) return vector<line>();
 	vector<line> res;
 	for (int i = 0; i < (int) q.size(); ++i)
 		res.push_back(q[i]);

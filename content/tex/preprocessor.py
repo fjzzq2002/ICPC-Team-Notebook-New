@@ -102,7 +102,8 @@ def processwithcomments(caption, instream, outstream, listingslang):
         # Check includes
         include = parse_include(line)
         if include is not None and not keep_include:
-            includelist.append(include)
+            if include.strip()!='':
+                includelist.append(include)
             continue
         nlines.append(line)
     # Remove and process multiline comments
@@ -202,8 +203,10 @@ def parse_include(line):
     line = line.strip()
     if line.startswith("#include"):
         header = line[8:].strip()
-        if header == 'bits/stdc++.h':
-            return None  # nobody cares
+        if 'bits/stdc++.h' in header:
+            return ''  # nobody cares
+        if 'stdio' in header:
+            return ''  # nobody cares
         return header
     # sometimes we are just too lazy to clean up the includes, typedefs etc.
     if line_raw.startswith("using namespace ") and line.strip().endswith(';'):
