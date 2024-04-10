@@ -1,11 +1,11 @@
-const int maxn = 100005;
-const int maxm = 200005;
+/**
+ * Author: MingyAng Deng
+ * Description: Euler tour.
+ */
 int stack[maxm];
 struct edge {
-	int u, v, id;
-	edge *nx;
-	edge *rev;
-	int tp;
+	int u, v, id, tp;
+	edge *nx, *rev;
 }p[maxm * 2], *h[maxn];
 int cnt = 0;
 void addedge(int u, int v, int id, int t) {

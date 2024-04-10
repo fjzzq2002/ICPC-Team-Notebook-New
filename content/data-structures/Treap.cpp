@@ -4,9 +4,9 @@
  */
 #include <bits/stdc++.h>
 using namespace std;
-mt19937 mt1(time(0));
 #define ll long long
 #define SZ 233333
+mt19937 mt1(time(0));
 int ch[SZ][2],sz[SZ],an=0,root;
 ll tag[SZ],val[SZ],sum[SZ];
 void addnode(int& ad,int x) {
@@ -37,12 +37,10 @@ void split(int x,int& a,int& b,int s) {
 }
 void merge(int& ad,int a,int b) {
 	if(a&&b) {
-		if((int)mt1()%(sz[a]+sz[b])<sz[a]) {
-			pd(ad=a); merge(ch[a][1],ch[a][1],b);
-		}
-		else {
-			pd(ad=b); merge(ch[b][0],a,ch[b][0]);
-		}
+		if((int)mt1()%(sz[a]+sz[b])<sz[a])
+			pd(ad=a), merge(ch[a][1],ch[a][1],b);
+		else
+			pd(ad=b), merge(ch[b][0],a,ch[b][0]);
 		upd(ad);
 	}
 	else ad=a|b;
@@ -77,15 +75,4 @@ int ins(int l,int r) {
 void init() {
 	addnode(root,0);
 	merge(root,ins(1,n),root);
-}
-int main() {
-	scanf("%d",&n);
-	for(int i=1;i<=n;i++) scanf("%d",&ns[i]);
-	init();
-	while(n--) {
-		int o,l,r,c;
-		scanf("%d%d%d%d",&o,&l,&r,&c);
-		if(!o) edit(l,r,c);
-		else ++c,printf("%lld\n",(query(l,r)%c+c)%c);
-	}
 }

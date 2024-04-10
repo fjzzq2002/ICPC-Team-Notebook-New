@@ -201,7 +201,10 @@ def parse_include(line):
     line_raw = line
     line = line.strip()
     if line.startswith("#include"):
-        return line[8:].strip()
+        header = line[8:].strip()
+        if header == 'bits/stdc++.h':
+            return None  # nobody cares
+        return header
     # sometimes we are just too lazy to clean up the includes, typedefs etc.
     if line_raw.startswith("using namespace ") and line.strip().endswith(';'):
         return line[len('using namespace '):].strip()[:-1]+'::'

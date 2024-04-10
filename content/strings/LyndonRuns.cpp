@@ -1,6 +1,6 @@
 /**
  * Author: yjz?
- * Description: Compute lyndon and runs. TODO: check whether it works
+ * Description: A string is called *simple* (or a Lyndon word), if it is strictly smaller than any of its own nontrivial suffixes. It can be shown that a string is simple, if and only if it is strictly smaller than all its nontrivial cyclic shifts. The Lyndon factorization of the string $s$ is a factorization $s = w_1 w_2 \dots w_k$, where all strings $w_i$ are simple, and they are in non-increasing order $w_1 \ge w_2 \ge \dots \ge w_k$. Gives lyndon for all the suffixes (op=1, $[i,ly_i]$).
  */
 #include <bits/stdc++.h>
 using namespace std;
